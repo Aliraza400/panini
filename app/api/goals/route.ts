@@ -29,27 +29,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
   }
 }
 
-// export async function GET(res: NextResponse) {
-//     try {
-//       const goals = await GoalModel.find()
-//       const courseIds = goals.map((goal) => goal.courses).flat()
-//       const course = await CourseModel.find({_id: {$in: courseIds}})
-
-//       const populatedGoals = goals.map((goal) => {
-//         const goalCourse = course.filter((itemCourse) => 
-//             goal.courses.includes(itemCourse._id.toString())
-//         )
-//         return {...goal.toObject(), course: goalCourse}
-//       })
-//       return NextResponse.json({ success: true, goals: populatedGoals });
-//     } catch (error) {
-//       return NextResponse.json(
-//         { success: false, message: 'Failed to fetch goals' },
-//         { status: 500 }
-//       );
-//     }
-//   } 
-
 export async function GET(res: NextResponse) {
   try {
     const goals = await GoalModel.find();

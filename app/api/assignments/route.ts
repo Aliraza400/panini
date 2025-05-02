@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/lib/db";
 import AssignmentModel from "@/models/assignment.model";
 import mongoose from "mongoose";
-import { ObjectId } from "mongodb";
 import GoalModel from "@/models/goal.model";
 import CourseModel from "@/models/course.model";
 import TopicModel from "@/models/topic.model";

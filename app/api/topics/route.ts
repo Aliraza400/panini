@@ -7,13 +7,6 @@ connectDB();
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    // Check authentication
-    /* const authResponse = await isAuthenticated(req);
-    if (authResponse) {
-      // If middleware returns a response (unauthorized), return it
-      return authResponse;
-    }
- */
     const { name } = await req.json();
 
     if (!name || typeof name !== "string") {

@@ -1,7 +1,5 @@
 import connectDB from "@/lib/db";
 import CourseModel from "@/models/course.model";
-import TopicModel from "@/models/topic.model";
-import mongoose from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 
 connectDB();
@@ -51,15 +49,6 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const courses = await CourseModel.find();
-    /* const topicIds = courses.map((course) => course.topics).flat();
-    const topics = await TopicModel.find({ _id: { $in: topicIds } });
-
-    const populatedCourses = courses.map((course) => {
-      const courseTopics = topics.filter((topic) =>
-        course.topics.includes(topic._id.toString())
-      );
-      return { ...course.toObject(), topics: courseTopics };
-    }); */
 
     return NextResponse.json({
       success: true,
